@@ -10,9 +10,9 @@ void main() {
 
     expect(find.byType(ProgressButton), findsOneWidget);
 
-    await tester.tap(find.byType(RaisedButton));
+    await tester.tap(find.byType(ElevatedButton));
 
     final widget = tester.widget<ButtonStaggerAnimation>(find.byType(ButtonStaggerAnimation));
-    expect(widget.controller.isAnimating, true);
+    expect(widget.controller!.isAnimating, true);
   });
 }

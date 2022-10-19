@@ -26,8 +26,8 @@ class ProgressButton extends StatefulWidget {
   final Widget child;
 
   ProgressButton({
-    @required this.child,
-    @required this.onPressed,
+    required this.child,
+    required this.onPressed,
     this.color = Colors.blue,
     this.strokeWidth = 2,
     this.progressIndicatorColor = Colors.white,
@@ -42,7 +42,7 @@ class ProgressButton extends StatefulWidget {
 
 class _ProgressButtonState extends State<ProgressButton>
     with TickerProviderStateMixin {
-  AnimationController _controller;
+  late AnimationController _controller;
 
   @override
   void initState() {
@@ -64,7 +64,7 @@ class _ProgressButtonState extends State<ProgressButton>
   Widget build(BuildContext context) {
     return Center(
       child: ButtonStaggerAnimation(
-        controller: _controller.view,
+        controller: _controller.view as AnimationController?,
         color: widget.color,
         strokeWidth: widget.strokeWidth,
         progressIndicatorColor: widget.progressIndicatorColor,
